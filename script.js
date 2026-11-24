@@ -118,3 +118,49 @@ saveBtn.addEventListener('click', () => {
     link.href = canvas.toDataURL('image/png');
     link.click();
 });
+// --- Tambahan Logika Jenis Kuas di Bawah Sendiri ---
+const brushType = document.getElementById('brushType');
+let currentBrush = 'solid';
+
+brushType.addEventListener('change', (e) => {
+    currentBrush = e.target.value;
+    isEraser = false;
+    eraserBtn.classList.remove('active-tool');
+});
+
+// Fungsi draw yang mendukung Kuas Semprot & Neon
+function draw(event) {
+    if (!isDrawing) return;
+    if (event.cancelable) event.preventDefault();
+
+    const coords = getCoordinates(event);
+    ctx.lineWidth = currentSize;
+    ctx.strokeStyle = isEraser ? '#ffffff' : currentColor;
+    ctx.fillStyle = isEraser ? '#ffffff' : currentColor;
+
+    if (currentBrush === 'solid' || isEraser) {
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(coords.x, coords.y);
+    } 
+    else if (currentBrush === 'spray') {
+        const density = 20;
+        for (let i = 0; i < density; i++) {
+            const offsetX = (Math.random() - 0.5) * currentSize * 2;
+            const offsetY = (Math.random() - 0.5) * currentSize * 2;
+            if (Math.sqrt(offsetX * offsetX + offsetY * offsetY) <= currentSize) {
+                ctx.fillRect(coords.x + offsetX, coords.y + offsetY, 2, 2);
+            }
+        }
+    } 
+    else if (currentBrush === 'neon') {
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = currentColor;
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(coords.x, coords.y);
+        ctx.shadowBlur = 0;
+    }
+}
