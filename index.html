@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Sketsa Langit - Web Menggambar</title>
+    <!-- Menghubungkan ke file CSS untuk desain warna biru langit -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>☁️ Papan Sketsa Langit</h1>
+        <p>Tuangkan ide dan imajinasimu di atas kanvas digital</p>
+    </header>
+
+    <main>
+        <!-- Area Alat Gambar (Toolbar) -->
+        <div class="toolbar">
+            <div class="tool-group">
+                <label for="colorPicker">Warna Kuas:</label>
+                <input type="color" id="colorPicker" value="#0284c7">
+            </div>
+
+            <div class="tool-group">
+                <label for="brushSize">Ukuran Kuas:</label>
+                <input type="range" id="brushSize" min="1" max="30" value="5">
+                <span id="sizeDisplay">5px</span>
+            </div>
+
+            <div class="tool-group">
+                <button id="eraserBtn" type="button">Penghapus</button>
+                <button id="clearBtn" type="button">Bersihkan Semua</button>
+                <button id="saveBtn" type="button">Simpan Gambar</button>
+            </div>
+        </div>
+
+        <!-- Area Kertas Gambar (Canvas) -->
+        <div class="canvas-container">
+            <canvas id="drawingCanvas" width="800" height="500"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>Dibuat dengan semangat belajar pemrograman web</p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript agar kanvas bisa dipakai menggambar -->
+    <script src="script.js"></script>
+</body>
+</html>
