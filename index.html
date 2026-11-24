@@ -17,6 +17,39 @@
     <main>
         <!-- Area Alat Gambar (Toolbar) -->
         <div class="toolbar">
+            <!-- Area Alat Gambar (Toolbar yang diperbarui) -->
+<div class="toolbar">
+    <!-- Pilihan Warna -->
+    <div class="tool-group">
+        <label for="colorPicker">Warna:</label>
+        <input type="color" id="colorPicker" value="#0284c7">
+    </div>
+
+    <!-- Pilihan Jenis Kuas -->
+    <div class="tool-group">
+        <label for="brushType">Jenis Kuas:</label>
+        <select id="brushType">
+            <option value="solid">Kuas Biasa (Solid)</option>
+            <option value="spray">Kuas Semprot (Spray)</option>
+            <option value="neon">Kuas Neon (Glow)</option>
+        </select>
+    </div>
+
+    <!-- Ukuran Kuas -->
+    <div class="tool-group">
+        <label for="brushSize">Ukuran:</label>
+        <input type="range" id="brushSize" min="1" max="50" value="5">
+        <span id="sizeDisplay">5px</span>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div class="tool-group">
+        <button id="eraserBtn" type="button">Penghapus</button>
+        <button id="clearBtn" type="button">Bersihkan</button>
+        <button id="saveBtn" type="button">Simpan</button>
+    </div>
+</div>
+            
             <div class="tool-group">
                 <label for="colorPicker">Warna Kuas:</label>
                 <input type="color" id="colorPicker" value="#0284c7">
