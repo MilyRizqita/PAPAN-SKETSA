@@ -128,3 +128,21 @@ footer {
     font-size: 0.85rem;
     color: #0369a1;
 }
+
+/* --- Tambahan Gaya untuk Dropdown Jenis Kuas di Bawah Sendiri --- */
+select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid #bae6fd;
+    background-color: #ffffff;
+    color: #0c4a6e;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+select:hover {
+    border-color: #0284c7;
+}
+
