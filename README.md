@@ -362,3 +362,8 @@ saveBtn.addEventListener('click', () => {
     link.href = canvas.toDataURL('image/png');
     link.click();
 });
+
+# personal contribution
+Mencari ide dasar
+Mengubah header dan beberapa text 
+Menambahkan beberapa fitur tambahan sesuai keinginan dengan mengandalkan pemahaman logika dan code yang sudah ada sebelumnya
